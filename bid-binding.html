@@ -1,0 +1,42 @@
+<!-- 剖析前端数据双向绑定 -->
+<!--definePropert-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id= 'myapp'>
+        <label>实现双向绑定</label>
+        <input id='wmh' type="text">
+        <div id='wmh1'></div>
+    </div>
+</body>
+<script>
+// Object.defineProperty方法可以给对象新增或者修改属性,返回该对象,可以用来创建新的对象
+
+//grammar:Object.defineProperty(obj, prop, descriptor)
+//obj 要修改的对象,p属性,对对象的描述
+var obj = {};
+Object.defineProperty(obj,"name",{
+    get:function(){
+        console.log("调用了get");
+    },
+    set:function(newValue){
+        //数据拦截/
+        //console.log("调用了set");
+        document.getElementById("wmh").value = newValue;
+        document.getElementById("wmh1").innerHTML = newValue;
+    }
+});
+
+//绑定监听事件调用set方法
+ document.getElementById("wmh").addEventListener("input",function(e){
+    obj.name = e.target.value;
+ });
+
+</script>
+</html>
