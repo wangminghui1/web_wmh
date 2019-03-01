@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>localStorage*SessionStorage</title>
+</head>
+<body>
+    <h1>本地存储</h1>
+</body>
+<script>
+    //前端本地存储
+    //h5之前使用cookie,cookie是一种浏览器跟踪的信息的标识
+    //多用于存储用户登录信息或者保存部分信息及session部分信息(sessionId)
+    //缺点:cookie存储大小为4kb
+    //cookie 需要设置有效期 cookie会跟request header在终端与服务器之间互相传递,影响带宽
+    //不安全
+    //webstorage存储 常用两种 API 相同
+    //1.locationstorage 本地存储 有效期永久
+    //2.sessionstorage  当前会话时间
+    //getItem获取 set设置
+    console.log(window.localStorage.getItem("name"));
+    // window.localStorage.setItem("name","王明辉");
+    console.log(window.sessionStorage.getItem("age"));
+    window.sessionStorage.setItem("age","180");
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ::-webkit-scrollbar{
+        display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈        
+    </div>
+</body>
+
+<script>
+    //防抖和节流
+    //防抖节流,在不影响客户体验的前提下,将频繁使用的回调函数,进行次数骤减,避免大量计算造成页面卡顿
+    // 却别防抖 将多次请求变为最后一次请求(应该是当前页面),节流是将多次执行变为规定时间内执行一次
+
+    //#防抖的定义:(延时执行)
+    // 比喻:RPG游戏法师技能释放读条,读条没玩再点击技能就得重新释放技能.
+    //应用场景:
+    // 1.连续操作导致频繁事件回调,造成页面卡顿(按钮收藏.点赞)
+    // 2.客户只关心最后一次执行(比如浏览器搜索)
+    window.onscroll = function () {
+        //滚动条位置
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        console.log('滚动条位置：' + scrollTop);
+    }
+</script>
+
+</html>

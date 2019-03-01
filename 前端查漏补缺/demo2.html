@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环执行定时器</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //js定时器
+    // 1.循环执行
+    function fun() {
+        var i = 0;
+        console.log(++i);
+        return function arr(){
+            return console.log(++i);
+        }
+    }
+    var aa = window.setInterval(fun, 1000);
+    // 2.定时执行
+   function cc (){
+       console.log("不一样!");
+   }
+   window.setTimeout(cc,5000);
+</script>
+
+</html>
